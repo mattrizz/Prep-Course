@@ -108,22 +108,37 @@ function esPar(num) {
   // De lo contrario, devuelve "false"
   // Tu código:
   
+// Fallo: ¿? for ( let p = num + 2 ; p == 0 ; p - 2 ) {if (p == 1){return false;}}
+
+var parTest;
+parTest = num + 2;
+
+  while ( !(parTest == 0) ){
+    parTest = parTest - 2;
+    if (parTest == 1) {
+      return false;
+    }
+  }
+  return true;
 }
+
 
 function esImpar(num) {
   // Devuelve "true" si "num" es impar
   // De lo contrario, devuelve "false"
-  // Tu código:
-  for ( (num = num + 2) ; num > = 0 ; num = (num - 2) ) {
-    
-    if (num == 1) { 
-      return true;
-    }
-    
-    if (num == 0) {
+  // Tu código: 
+  
+  // Falla for ( let i = num + 2 ; i == 1 ; i - 2 ) {if (i == 0){return false;} }
+ 
+  var imparTest;
+  imparTest = num + 3;
+  while (!(imparTest == 1)) {
+    imparTest -2;
+    if (imparTest == 0) {
       return false;
     }
   }
+  return true;
 }
 
 function elevarAlCuadrado(num) {
