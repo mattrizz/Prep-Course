@@ -65,11 +65,10 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-    var oracion = "";
-    for (i = 0; i < array.length; i++){
-        oracion = oracion + palabras[i] + " ";
-    }
-    return oracion;
+    
+    var frase = palabras.join(" ");
+    return frase;
+    
 }
 
 
@@ -181,34 +180,40 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+  
   var nuevoArray = [];
-  
-  for (i=0; i < array.length; i++) {
-      if (array[i] == "Enero" ) nuevoArray.push("Enero");
-    }
-  
 
-  for (i=0; i < array.length; i++) {
-      if (array[i] == "Marzo") nuevoArray.push("Marzo");
+  for (i = 0; i < array.length; i++){
+    if (array[i] == "Enero") {
+      nuevoArray.push(array[i]);
+      //console.log("Se encontro Enero");
     }
-  
+    if (array[i] == "Marzo") {
+      nuevoArray.push(array[i]);
+      //console.log("Se encontro Marzo");
+    }
+    if (array[i] == "Noviembre") {
+      nuevoArray.push(array[i]);
+      //console.log("Se encontro Noviembre");
+    }
+  }
 
-  for (i=0; i < array.length; i++) {
-      if (array[i] == "Noviembre") nuevoArray.push("Noviembre");
+  if (!(nuevoArray.length == 3)){
+    return "No se encontraron los meses pedidos";
+    //console.log("No se encontraron los meses pedidos");
+  } 
+
+  else{
+    return nuevoArray;
+    //console.log("Devuelve nuevo array: " + nuevoArray);
   }
  
-  // console.log ("viejo arreglo: " + array);
-  // console.log ("nuevo Arreglo: " + nuevoArray);
-  // console.log ("la longitud de nuevo arreglo es: " + nuevoArray.length);
- 
-  if (nuevoArray.length == 0) return "No se encontraron los meses pedidos"; // console.log ("No se encontraron los meses pedidos");
-  if (nuevoArray.length >= 1) return nuevoArray; // console.log ("Se encontaron los meses y se ordenaron de esta manera: " + nuevoArray);  
 }
 
 
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
-  //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
+  //valores mayores a 100 (no incluye el 100. Finalmente devolver el nuevo array.
   // Tu código:
 
   var newArray = [];
@@ -229,6 +234,21 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+ 
+ var nuevaCadena = [];
+
+ for (i = 0; i < 10; i++) {
+  numero = numero +2;
+  nuevaCadena[i] = numero;
+  // console.log("Se suma " + numero + " a la cadena: " + nuevaCadena[i] + " y el valor de la interacción es; " + i + " .");
+  if (nuevaCadena[i] == i){
+    // console.log("El valor de la cadena es igual al de interacción, se interrumpe la ejecución. [EXIT]")
+    return "Se interrumpió la ejecución";
+    break;
+  } 
+ }
+ // console.log ("Finalizado, la nueva cadena es: " + nuevaCadena + " .");
+ return nuevaCadena; 
 }
 
 
@@ -239,6 +259,22 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+
+  var nuevoArreglo = [];
+ 
+  for (i=1; i <= 10; i++ ){
+
+    if ( i === 5){
+      // console.log ("Llegamos a la interacción " + i + " , el valor numerico: " + (nuevoArreglo + 2) + " no se escribirá en la lista.");
+      continue;
+    }
+    numero = numero + 2;
+    nuevoArreglo.push (numero);
+    // console.log (" Se agrega el " + i  +"° valor a la cadena. La misma es actualmente de la sig manera: " + nuevoArreglo);
+    }
+
+  // console.log ("La cadena final queda conformada de la siguiente manera: " + nuevoArreglo);
+  return nuevoArreglo;
 }
 
 
